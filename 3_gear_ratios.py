@@ -14,7 +14,7 @@ with open("3_gear_ratios.txt") as fyle:
 # .664.598.."
 
 # lines = sample.split("\n")
-# SUM = 4361
+# SUM should equal 4361
 
 
 ## To get list of symbols ## CAN POSSIBLY USE REGEX
@@ -33,27 +33,12 @@ ls_symbols = ['*', '-', '%', '$', '=', '@', '#', '/', '&', '+']
 # If integer found, extend in certain direction to include all digits
 # Make sure not to double count numbers
 
-
-
 ##############
 ## OPTION 2 ##
 ##############
 # For every INTEGER found, extend to the right until number is finished
 # Once number is found, search around it for symbols.
 # If there are symbols immediately around the number, add it to the sum
-
-
-# Option 2:
-"""ISSUES:
-1. Need to use try and except statements for out of bound lines, but if I put except continue, then the rest of the code (the elifs) will not execute when I want it to
-2. Some variables (j, i, and line (unless specified)) are not defined in my is_valid function according to Pylance, not sure how to make it so that the function will call the global variables
-    Janky solution: Specify all variables in the is_valid function. ##DONE##
-3. Need to find a way to skip the loop a set number of times (if number is 3 digits long, we want to skip checking for the next 2 characters in the line)
-    Janky solution: implementation of skip value ##DONE##
-
-"""
-
-
 
 def main_2():
     sum = 0
@@ -102,13 +87,6 @@ def is_valid(number, line, i, j):
                         return True
         except IndexError:
             pass
-        
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main_2()
